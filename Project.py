@@ -6,7 +6,12 @@ courses = ["1)Python","2)Embedded","3)AI","4)ML","5)DL"]
 
 selected_courses = []
 selected_courses_new = []
-grades = {"midterm" : 0 ,"final" : 0, "project": 0}
+grades = {"Python": {"midterm" : 80 ,"final" : 70, "project": 100},
+          "Embedded": {"midterm" : 60 ,"final" : 80, "project": 80},
+          "AI": {"midterm" : 60 ,"final" : 70, "project": 40},
+          "ML": {"midterm" : 70 ,"final" : 50, "project": 60},
+          "DL": {"midterm" : 90 ,"final" : 30, "project": 80}}
+          
 error = 3
 right = 0
 login = False
@@ -29,13 +34,9 @@ while error > 0:
 
 def calculate_grade(selected_4grade):
 
-    grades["midterm"] = int(input("Your midterm: "))
-    grades["final"] = int(input("Your final: "))
-    grades["project"] = int(input("Your project: "))
+    print(f"Your {selected_4grade} course grades list : ",grades[selected_4grade])
 
-    print(f"Your {selected_4grade} course grades list : ",grades)
-
-    your_grade = grades["midterm"] * 0.30 + grades["final"]*0.50 + grades["project"]*0.20
+    your_grade = grades[selected_4grade]["midterm"] * 0.30 + grades[selected_4grade]["final"]*0.50 + grades[selected_4grade]["project"]*0.20
 
     if your_grade >= 90:
         print("Your final grade: AA")
@@ -86,8 +87,3 @@ if login:
             print("Please choose course from your chosen courses")
             chck += 1
     
-        
-    
-
-    
-
