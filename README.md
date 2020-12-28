@@ -1,2 +1,2 @@
 # GlobalAIHubPythonHomework
-![alt text](https://github.com/emreuslu/GlobalAIHubPythonHomework/certificate.png)
+![alt text](certificate.png)
